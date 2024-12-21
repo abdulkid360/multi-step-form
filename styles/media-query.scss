@@ -1,0 +1,203 @@
+@import "colors";
+@import "mixins";
+
+@media screen and (min-width: 600px) {
+  * {
+    position: static !important;
+  }
+  .container {
+    height: 100vh;
+  }
+  .inner-container {
+    padding: 15px;
+    background: $white;
+    @include flex-items();
+    height: fit-content;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 5px 5px 10px rgba($color: $light-gray, $alpha: 0.1);
+  }
+  .main {
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+  }
+  .banner {
+    position: relative !important;
+    #desktop-svg {
+      display: block !important;
+      border-radius: 7px !important;
+    }
+    #mobile-svg {
+      display: none;
+    }
+    .progress {
+      display: flex;
+      flex-direction: column;
+      position: absolute !important;
+      left: 20px !important;
+      top: -5px;
+      .step {
+        font-size: 1em;
+        display: flex !important;
+        align-items: center;
+        margin-top: 10px;
+        gap: 5px;
+        .step-detail {
+          display: flex;
+          flex-direction: column;
+          text-transform: uppercase;
+          .detail1 {
+            color: $light-gray;
+            margin-bottom: 2px;
+          }
+          .detail2 {
+            color: $white;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  #form1 {
+    h1 {
+      margin-top: 20px;
+    }
+    .inputs {
+      margin-top: 30px;
+    }
+    .form-group {
+      margin-top: 20px !important;
+      .input {
+        margin-top: 8px !important;
+      }
+    }
+  }
+  #form2 {
+    h1 {
+      margin-top: 20px;
+    }
+    .inputs {
+      display: flex;
+      column-gap: 15px !important;
+      margin-top: 20px;
+      padding: 7px 5px;
+      .input {
+        flex-direction: column;
+        justify-content: left;
+        width: 130px !important;
+        padding-top: 19px;
+        padding-bottom: 19px;
+        .form2-container {
+          display: flex;
+          justify-content: right;
+          margin-top: 40px;
+          width: 100%;
+          margin-left: -3.5px;
+        }
+      }
+    }
+    .switch-container {
+      width: 100%;
+      background: $magnolia;
+      height: 35px;
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      column-gap: 22px;
+      align-items: center;
+      border-radius: 5px;
+      .switch {
+        height: fit-content;
+        padding: 0;
+        padding: 2.5px;
+        width: 25px;
+        border: 1px solid;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        background: $marine-blue;
+        &:hover {
+          cursor: pointer;
+        }
+        input {
+          appearance: none;
+          width: 0;
+          height: 0;
+        }
+        .slider {
+          // position: absolute;
+          // left: 0;
+          // top: 0;
+          // right: 0;
+          // bottom: 0;
+          transition: 0.5s;
+        }
+        input:checked + .slider {
+          transform: translateX(15px);
+        }
+
+        .round {
+          width: 10px;
+          height: 10px;
+          background: $magnolia;
+          border-radius: 50%;
+          // margin-top: .1px;
+        }
+      }
+    }
+  }
+  #form3 {
+    h1 {
+      margin-top: 35px;
+    }
+    .inputs {
+      margin-top: 30px;
+    }
+    .form3-container {
+      margin-left: -90px !important;
+    }
+  }
+  #form4 {
+    h1 {
+      margin-top: 35px;
+    }
+    .inputs {
+      margin-top: 30px;
+    }
+  }
+  #form5 {
+    .form5-group {
+      position: relative !important;
+      top: 65px !important;
+    }
+  }
+  .big-nav {
+    @include place-center();
+    .form-nav {
+      margin-top: 65px !important;
+      width: 83% !important;
+      margin-left: 30px !important;
+      padding: 13px 0 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #form3 {
+    .form3-container {
+      margin-left: 8px !important;
+    }
+  }
+}
+
+// Main container width issues
+@media screen and (min-width: 768px) {
+  .inner-container {
+    width: 750px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .inner-container {
+    width: 850px;
+  }
+}

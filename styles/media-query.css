@@ -1,0 +1,186 @@
+@media screen and (min-width: 600px) {
+  * {
+    position: static !important;
+  }
+  .container {
+    height: 100vh;
+  }
+  .inner-container {
+    padding: 15px;
+    background: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: space-between;
+    height: -moz-fit-content;
+    height: fit-content;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(214, 217, 230, 0.1);
+  }
+  .main {
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+  }
+  .banner {
+    position: relative !important;
+  }
+  .banner #desktop-svg {
+    display: block !important;
+    border-radius: 7px !important;
+  }
+  .banner #mobile-svg {
+    display: none;
+  }
+  .banner .progress {
+    display: flex;
+    flex-direction: column;
+    position: absolute !important;
+    left: 20px !important;
+    top: -5px;
+  }
+  .banner .progress .step {
+    font-size: 1em;
+    display: flex !important;
+    align-items: center;
+    margin-top: 10px;
+    gap: 5px;
+  }
+  .banner .progress .step .step-detail {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+  }
+  .banner .progress .step .step-detail .detail1 {
+    color: hsl(229, 24%, 87%);
+    margin-bottom: 2px;
+  }
+  .banner .progress .step .step-detail .detail2 {
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+  }
+  #form1 h1 {
+    margin-top: 20px;
+  }
+  #form1 .inputs {
+    margin-top: 30px;
+  }
+  #form1 .form-group {
+    margin-top: 20px !important;
+  }
+  #form1 .form-group .input {
+    margin-top: 8px !important;
+  }
+  #form2 h1 {
+    margin-top: 20px;
+  }
+  #form2 .inputs {
+    display: flex;
+    -moz-column-gap: 15px !important;
+         column-gap: 15px !important;
+    margin-top: 20px;
+    padding: 7px 5px;
+  }
+  #form2 .inputs .input {
+    flex-direction: column;
+    justify-content: left;
+    width: 130px !important;
+    padding-top: 19px;
+    padding-bottom: 19px;
+  }
+  #form2 .inputs .input .form2-container {
+    display: flex;
+    justify-content: right;
+    margin-top: 40px;
+    width: 100%;
+    margin-left: -3.5px;
+  }
+  #form2 .switch-container {
+    width: 100%;
+    background: hsl(217, 100%, 97%);
+    height: 35px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    -moz-column-gap: 22px;
+         column-gap: 22px;
+    align-items: center;
+    border-radius: 5px;
+  }
+  #form2 .switch-container .switch {
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 0;
+    padding: 2.5px;
+    width: 25px;
+    border: 1px solid;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    background: hsl(213, 96%, 18%);
+  }
+  #form2 .switch-container .switch:hover {
+    cursor: pointer;
+  }
+  #form2 .switch-container .switch input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 0;
+    height: 0;
+  }
+  #form2 .switch-container .switch .slider {
+    transition: 0.5s;
+  }
+  #form2 .switch-container .switch input:checked + .slider {
+    transform: translateX(15px);
+  }
+  #form2 .switch-container .switch .round {
+    width: 10px;
+    height: 10px;
+    background: hsl(217, 100%, 97%);
+    border-radius: 50%;
+  }
+  #form3 h1 {
+    margin-top: 35px;
+  }
+  #form3 .inputs {
+    margin-top: 30px;
+  }
+  #form3 .form3-container {
+    margin-left: -90px !important;
+  }
+  #form4 h1 {
+    margin-top: 35px;
+  }
+  #form4 .inputs {
+    margin-top: 30px;
+  }
+  #form5 .form5-group {
+    position: relative !important;
+    top: 65px !important;
+  }
+  .big-nav {
+    display: grid;
+    place-items: center;
+  }
+  .big-nav .form-nav {
+    margin-top: 65px !important;
+    width: 83% !important;
+    margin-left: 30px !important;
+    padding: 13px 0 !important;
+  }
+}
+@media screen and (max-width: 750px) {
+  #form3 .form3-container {
+    margin-left: 8px !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .inner-container {
+    width: 750px;
+  }
+}
+@media screen and (min-width: 980px) {
+  .inner-container {
+    width: 850px;
+  }
+}/*# sourceMappingURL=media-query.css.map */

@@ -1,0 +1,101 @@
+@mixin place-center {
+  display: grid;
+  place-items: center;
+}
+
+@mixin center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin bordered($color) {
+  border: 1px solid $color;
+  border-radius: 7px !important;
+}
+
+@mixin my-form() {
+  position: relative;
+  top: -72.8px;
+  border-radius: 7px;
+  background: $white;
+  padding: 20px;
+}
+
+@mixin form-h1() {
+  color: $marine-blue;
+  padding-bottom: 8px;
+}
+
+@mixin form-p() {
+  color: $cool-gray;
+  font-weight: normal;
+  font-size: 1.1em;
+  line-height: 1.2em;
+}
+
+@mixin input-region() {
+  @include bordered($light-gray);
+  width: 100%;
+  padding: 13px 13px 13px 15px;
+  font-family: $ubuntu;
+  font-weight: bold !important;
+  font-size: 1em;
+  box-sizing: border-box;
+  margin-top: 5px;
+  color: $marine-blue;
+  outline: none;
+}
+
+@mixin user-action() {
+  &::placeholder {
+    color: $cool-gray;
+  }
+  &:hover {
+    border-color: $purple-blue;
+    cursor: pointer;
+  }
+  &:active {
+    border-color: $purple-blue;
+    caret-color: $marine-blue;
+  }
+  &:focus {
+    border-color: $purple-blue;
+    caret-color: $marine-blue;
+  }
+}
+
+@mixin flex-items() {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin form-container() {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+@mixin form-price() {
+  // display: inline-flex;
+  color: $cool-gray;
+  font-weight: 500;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+@mixin btn($color, $bg) {
+  padding: 15px 20px !important;
+  background: $bg;
+  color: $color;
+  font-family: $ubuntu;
+  font-weight: bold;
+  border: none;
+  outline: none;
+}
+
+@mixin light-gray() {
+  color: $cool-gray;
+  font-weight: 500;
+  font-size: 0.8em;
+  margin-top: 5px;
+}

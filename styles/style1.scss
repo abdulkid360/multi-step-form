@@ -1,0 +1,414 @@
+@import "colors";
+@import "mixins";
+// Body font size 16px
+$body-size: 14px;
+
+// Variables
+
+$ubuntu: "Ubuntu", sans-serif;
+
+// Styling elements
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+body {
+  font-family: $ubuntu;
+  font-size: $body-size;
+  background: $magnolia;
+  height: fit-content !important;
+}
+
+.container {
+  @include place-center();
+  max-width: 100vw !important; /* Prevent exceeding screen width */
+  overflow: hidden !important;
+}
+
+.banner {
+  @include place-center();
+  max-width: 100vw;
+  #desktop-svg {
+    display: none;
+  }
+  .progress {
+    position: absolute;
+    top: 30px;
+    left: auto;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    @include center();
+    // @include bordered($cool-gray);
+    .step-detail {
+      display: none;
+    }
+    .circle-progress {
+      @include bordered($white);
+      color: $white;
+      border-radius: 50% !important;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 1.1em;
+      margin: 7px;
+    }
+    .active {
+      background: $light-blue;
+      color: $marine-blue;
+    }
+  }
+}
+
+.main {
+  @include center();
+  width: 90%;
+}
+
+.input-error {
+  border-color: $strawberry-red !important;
+}
+
+.error-text {
+  color: $strawberry-red;
+  position: absolute;
+  right: 0;
+  font-weight: bold;
+  display: none;
+}
+
+.big-main{
+  box-sizing: border-box !important;
+  height: fit-content !important;
+}
+
+#form1 {
+  @include my-form();
+  h1 {
+    @include form-h1();
+  }
+  p {
+    @include form-p;
+  }
+  .form-group {
+    margin: 13px 0px;
+    position: relative;
+    .label-error{
+      width: 100%;
+      display: flex;
+      justify-content: space-between !important;
+    }
+    label {
+      color: $marine-blue;
+      font-weight: 500;
+    }
+    .input {
+      @include input-region();
+      border-radius: 8px !important;
+      @include user-action();
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button{
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"]{
+      appearance: textfield;
+    }
+  }
+}
+
+#form2 {
+  @include my-form();
+  h1 {
+    @include form-h1();
+  }
+  p {
+    @include form-p();
+  }
+  .form-group {
+    margin: 13px 0px;
+    position: relative;
+    .active-input{
+      background: $magnolia !important;
+      border-color: $purple-blue !important;
+    }
+    .input {
+      background: $white;
+      @include input-region();
+      @include user-action();
+      @include flex-items();
+      justify-content: left !important;
+      &:hover {
+        background: $magnolia;
+      }
+      .form2-container {
+        @include form-container();
+        .form2-price {
+          @include form-price();
+          display: flex;
+          flex-direction: column;
+          row-gap: 4px;
+          .free-month{
+            color: $marine-blue;
+            display: none;
+          }
+          .variable-price2{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .switch-container {
+    margin-top: 20px;
+    width: 90%;
+    background: $alabaster;
+    height: 35px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    column-gap: 22px;
+    align-items: center;
+    border-radius: 5px;
+    .checked-color{
+      color: $marine-blue !important;
+    }
+    .unchecked-color{
+      color: $cool-gray !important;
+    }
+    .month {
+      color: $marine-blue;
+      font-weight: bold;
+    }
+    .year {
+      color: $cool-gray;
+      font-weight: bold;
+    }
+    .switch {
+      height: fit-content;
+      padding: 0;
+      padding: 2.5px;
+      width: 35px;
+      border: 1px solid;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      background: $marine-blue;
+      &:hover {
+        cursor: pointer;
+      }
+      input {
+        appearance: none;
+        width: 0;
+        height: 0;
+        &:active {
+          background: $marine-blue !important;
+        }
+        &:focus {
+          background: $marine-blue !important;
+        }
+      }
+      .slider {
+        transition: 0.5s;
+      }
+      input:checked + .slider {
+        transform: translateX(18.5px);
+      }
+
+      .round {
+        width: 10px;
+        height: 10px;
+        background: $magnolia;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+#form3 {
+  @include my-form();
+  h1 {
+    @include form-h1();
+  }
+  p {
+    @include form-p();
+  }
+  .form-group {
+    margin: 13px 0px;
+    position: relative;
+    .variable-price2{
+      display: none;
+    }
+    .active3-input{
+      background: $magnolia !important;
+      border-color: $purple-blue !important
+    };
+    .active{
+      display: inline !important;
+    }
+    .hidden{
+      display: none !important;
+    }
+    .input {
+      @include input-region();
+      @include user-action();
+      @include flex-items();
+      align-items: center;
+      &:hover {
+        background: $magnolia;
+      }
+      .form3-container {
+        @include form-container();
+        width: 170px;
+        .form3-detail {
+          @include form-price();
+          text-align: left;
+        }
+      }
+      .form3-price {
+        @include form-price();
+        color: $purple-blue;
+      }
+      .custom-check {
+        @include bordered($light-gray);
+        width: 19px;
+        height: 19px;
+        padding: 3px;
+        border-radius: 5px !important;
+      }
+      .check-box {
+        @include bordered($purple-blue);
+        background-color: $purple-blue;
+        width: 19px;
+        height: 19px;
+        padding: 3px;
+        border-radius: 5px !important;
+        display: none
+      }
+    }
+  }
+}
+
+#form4 {
+  @include my-form();
+  // box-sizing: content-box;
+  h1 {
+    @include form-h1();
+  }
+  p {
+    @include form-p();
+  }
+  .finish-group {
+    padding: 15px;
+    border-radius: 8px;
+    background: $alabaster;
+    .finish-header {
+      padding: 0px 0px 7px 0px;
+      border-bottom: 1px solid $light-gray;
+      @include flex-items();
+      align-items: center;
+      .finish {
+        display: flex;
+        flex-direction: column;
+        a {
+          color: $cool-gray;
+          margin-bottom: 15px;
+        }
+      }
+      .h1 {
+        @include form-h1();
+        margin-bottom: -4px;
+        font-weight: bold;
+      }
+    }
+    .form4-group {
+      margin-top: 5px;
+      .h1-price {
+        font-weight: bold !important;
+        color: $marine-blue;
+      }
+    }
+    .sub-container {
+      margin-top: 19px;
+      color: $cool-gray;
+      font-weight: 500;
+      @include flex-items();
+      .sub-total {
+        color: $marine-blue;
+      }
+    }
+  }
+  .expense-container {
+    padding: 15px;
+    @include flex-items();
+    .total-text {
+      color: $cool-gray;
+    }
+    .total-expenses {
+      font-weight: bold;
+      color: $purple-blue;
+    }
+  }
+}
+
+#form5{
+  @include my-form();
+  @include place-center();
+  padding: 100px 27px;
+  text-align: center;
+  h1{
+    color: $marine-blue;
+    margin: 20px 0px 10px 0px;
+  }
+  p{
+    color: $cool-gray;
+    font-size: 1.05em;
+    line-height: 25px;
+  }
+}
+
+.form-nav {
+  @include flex-items();
+  justify-content: right;
+  box-sizing: border-box !important;
+  background: $white;
+  margin-top: 30px;
+  width: 100%;
+  overflow: hidden !important;
+  padding: 17px 10px;
+  .next {
+    @include bordered($marine-blue);
+    @include btn($white, $marine-blue);
+    font-weight: 500;
+    border-radius: 7px !important;
+    &:hover {
+      cursor: pointer;
+      background: lighten($color: $marine-blue, $amount: 2%);
+    }
+  }
+  .confirm {
+    @include btn($white, $purple-blue);
+    @include bordered($purple-blue);
+    font-weight: 500;
+    border-radius: 7px !important;
+    display: none;
+    &:hover{
+      cursor: pointer;
+      background: lighten($color: $purple-blue, $amount: 4%);
+    }
+  }
+  .back {
+    @include btn($cool-gray, $white);
+    display: none;
+    &:hover {
+      color: $marine-blue;
+      cursor: pointer;
+    }
+  }
+}
